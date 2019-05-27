@@ -1,12 +1,17 @@
 server:
-  port: 8084
+  port: 8082
 
 spring:
   application:
     name: eurekaclient
+  rabbitmq:
+    host: 127.0.0.1
+    port: 15672
+    username: guest
+    password: guest
 
 management:
   endpoints:
     web:
       exposure:
-        include: refresh,health,info
+        include: refresh,health,info,bus-refresh
