@@ -1,5 +1,6 @@
 server:
   port: 8888
+
 spring:
   application:
     name: config
@@ -14,7 +15,19 @@ spring:
           username: lw476781393 #访问git仓库的用户名
           password: leiwen1988 #访问git仓库的用户密码
       label: master #配置仓库的分支
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://localhost:8081/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh,health,info,bus-refresh
